@@ -1,0 +1,13 @@
+# Handle line endings automatically for different operating systems
+* text=auto
+
+# Mark certain file types as binary
+*.jpg binary
+*.png binary
+
+# Treat shell scripts as text with LF line endings
+*.sh text eol=lf
+
+# Handle merge conflicts for lock files (keep ours or theirs)
+package-lock.json merge=ours
+yarn.lock merge=ours
