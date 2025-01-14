@@ -1,9 +1,0 @@
-Explain the paradigm with the following elements in the most complete way possible:
-
-+ Explain the paradigm and its style
-
-+ List all the programming languages that include this paradigm
-
-+ Structure and key concept of the paradigm in the form of a tree map
-
-+ Execution Program Roadmap in the form of a tree map
