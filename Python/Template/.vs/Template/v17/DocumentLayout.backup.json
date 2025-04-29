@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Windows\\Desktop\\Git\\Accumulate\\Python\\Template\\",
+  "WorkspaceRootPath": "D:\\Git\\Accumulate\\Python\\Template\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3A430A0F-0B79-4107-8529-B246C272F1F2}|Template.pyproj|C:\\Users\\Windows\\Desktop\\Git\\Accumulate\\Python\\Template\\Template.py||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{3A430A0F-0B79-4107-8529-B246C272F1F2}|Template.pyproj|D:\\Git\\Accumulate\\Python\\Template\\Template.py||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{3A430A0F-0B79-4107-8529-B246C272F1F2}|Template.pyproj|solutionrelative:Template.py||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -20,13 +20,13 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Template.py",
-              "DocumentMoniker": "C:\\Users\\Windows\\Desktop\\Git\\Accumulate\\Python\\Template\\Template.py",
+              "DocumentMoniker": "D:\\Git\\Accumulate\\Python\\Template\\Template.py",
               "RelativeDocumentMoniker": "Template.py",
-              "ToolTip": "C:\\Users\\Windows\\Desktop\\Git\\Accumulate\\Python\\Template\\Template.py*",
-              "RelativeToolTip": "Template.py*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
+              "ToolTip": "D:\\Git\\Accumulate\\Python\\Template\\Template.py",
+              "RelativeToolTip": "Template.py",
+              "ViewState": "AgIAACwAAAAAAAAAAAAkwDwAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002457|",
-              "WhenOpened": "2025-04-22T06:51:00.467Z",
+              "WhenOpened": "2025-04-29T07:47:59.208Z",
               "EditorCaption": ""
             }
           ]
