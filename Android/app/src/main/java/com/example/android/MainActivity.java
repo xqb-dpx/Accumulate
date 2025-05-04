@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         });
         Handler main_handler = new Handler();
         Runnable main_runnable = () -> {
-            Intent main_intent = new Intent(MainActivity.this.peekAvailableContext(), LoginActivity.class);
+            Intent main_intent = new Intent(MainActivity.this.peekAvailableContext(), MenuActivity.class);
             MainActivity.this.startActivity(main_intent);
             Toast.makeText(MainActivity.this.getApplicationContext(), "Starting...", Toast.LENGTH_SHORT).show();
             finish();

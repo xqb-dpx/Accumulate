@@ -7,4 +7,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+    <LinearLayout
+            android:gravity="center"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <EditText
+                android:id="@+id/fName"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:padding="20dp"
+                android:hint="First Name"
+                android:fontFamily="@font/ubuntu"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:layout_height="wrap_content"
+                tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"/>
+        <EditText
+                android:id="@+id/lName"
+                android:layout_marginBottom="20dp"
+                android:hint="Last Name"
+                android:layout_gravity="center"
+                android:layout_width="300dp"
+                android:padding="20dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:fontFamily="@font/ubuntu"
+                android:layout_height="wrap_content"
+                tools:ignore="Autofill,HardcodedText,LabelFor,MissingConstraints,TextFields"/>
+        <Button
+                android:id="@+id/submitData"
+                android:text="SUBMIT"
+                android:textSize="25dp"
+                android:fontFamily="@font/sansation"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                tools:ignore="HardcodedText,SpUsage"/>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

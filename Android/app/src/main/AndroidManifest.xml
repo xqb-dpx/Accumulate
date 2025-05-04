@@ -28,7 +28,7 @@
                 android:exported="true" tools:ignore="Instantiatable">
         </activity>
         <activity
-                android:name=".ProfileActivity"
+                android:name=".Contact"
                 android:exported="true" tools:ignore="Instantiatable">
         </activity>
         <activity
@@ -41,6 +41,10 @@
         </activity>
         <activity
                 android:name=".DatabaseActivity"
+                android:exported="true" tools:ignore="Instantiatable">
+        </activity>
+        <activity
+                android:name=".MenuActivity"
                 android:exported="true" tools:ignore="Instantiatable">
         </activity>
     </application>

@@ -1,0 +1,29 @@
+@font-face {
+	font-family: WIRAN;
+	font-weight: normal;
+	src: url("iran-fonts/IRAN.ttf") format("truetype"), url("assets/iran-fonts/IRAN.woff") format("woff");
+}
+
+@font-face {
+	font-family: WIRAN;
+	font-weight: bold;
+	src: url("iran-fonts/IRAN_Bold.ttf") format("truetype"), url("assets/iran-fonts/IRAN_Bold.woff") format("woff");
+}
+
+@font-face {
+	font-family: WIRAN;
+	font-weight: 600;
+	src: url("iran-fonts/IRAN_SemiBold.ttf") format("truetype"), url("assets/iran-fonts/IRAN_SemiBold.woff") format("woff");
+}
+
+body {
+	font-family: WIRAN;
+}
+
+a {
+	text-decoration: none;
+}
+
+.text-justify {
+	text-align: justify;
+}
