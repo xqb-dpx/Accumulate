@@ -44,18 +44,12 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint({"SetTextI18n", "ObsoleteSdkInt"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        songs = new ArrayList<>();
-        songAdapter = new SongAdapter(songs, this, this::playSong);
 
         super.onCreate(savedInstanceState);
+        songs = new ArrayList<>();
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(songAdapter);
-        seekBar = findViewById(R.id.seekBar);
-        btnPlayPause = findViewById(R.id.btnPlayPause);
-        btnNext = findViewById(R.id.btnNext);
-        btnPrev = findViewById(R.id.btnPrev);
 
         String permission;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -70,6 +64,18 @@ public class MainActivity extends AppCompatActivity {
         } else {
             loadSongs();
         }
+
+
+        songAdapter = new SongAdapter(songs, this, this::playSong);
+
+
+        recyclerView.setAdapter(songAdapter);
+        seekBar = findViewById(R.id.seekBar);
+        btnPlayPause = findViewById(R.id.btnPlayPause);
+        btnNext = findViewById(R.id.btnNext);
+        btnPrev = findViewById(R.id.btnPrev);
+
+
 
         btnPlayPause.setOnClickListener(v -> {
             if (mediaPlayer != null) {
