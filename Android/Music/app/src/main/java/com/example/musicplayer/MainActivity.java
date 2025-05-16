@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Link Saved Successfully.", Toast.LENGTH_SHORT).show();
                 edtLink.setText("");
             } else {
-                Toast.makeText(this, "Please Enter A Link!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please Enter a Link!", Toast.LENGTH_SHORT).show();
             }
         });
 

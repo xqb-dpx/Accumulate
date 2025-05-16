@@ -21,29 +21,34 @@ import androidx.core.content.ContextCompat;
 @SuppressLint("CustomSplashScreen")
 public class SplashActivity extends AppCompatActivity {
 
+    private BroadcastReceiver receiver;
+    TextView netstat;
+    ImageView netstatimg ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
+//        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_splash);
 //        checkOldPermission();
 //        checkNewPermission();
-//        if (!checkOldPermission() || !checkNewPermission()) {
-//            requestPermission();
-//        } else if (checkOldPermission() || checkNewPermission()) {
-//            // Set SharedPreferences
-//            boolean permissions = checkOldPermission() || checkNewPermission();
-//            SharedPreferences sp = getSharedPreferences("Permission", MODE_PRIVATE);
-//            SharedPreferences.Editor editor = sp.edit();
-//            editor.putBoolean("granted", permissions);
-//            editor.apply();
-//            // Intent & Habdler
-//            new Handler().postDelayed(() -> {
-//                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-//                startActivity(intent);
-//                finish();
-//            }, 1500);
-//        }
+        netstatimg = findViewById(R.id.connection_state_img);
+        if (!checkNewPermission()) {
+            requestPermission();
+        } else {
+            // Set SharedPreferences
+            boolean permissions = checkOldPermission() || checkNewPermission();
+            SharedPreferences sp = getSharedPreferences("Permission", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sp.edit();
+            editor.putBoolean("granted", permissions);
+            editor.apply();
+            // Intent & Habdler
+            new Handler().postDelayed(() -> {
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }, 1500);
+        }
     }
 
     boolean checkOldPermission() {
@@ -66,21 +71,17 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    private BroadcastReceiver receiver;
-    TextView netstat;
-    ImageView netstatimg;
     @SuppressLint("SetTextI18n")
     public void onReceive(Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo netInfo = cm.getActiveNetworkInfo();
-        boolean isConnected = netInfo != null && netInfo.isConnectedOrConnecting();
         Toast.makeText(SplashActivity.this, "Checking Network Info...", Toast.LENGTH_SHORT).show();
-        if (isConnected) {
+        if (netInfo != null && netInfo.isConnectedOrConnecting()) {
             netstat.setText("Online!");
-            netstatimg.setImageResource(android.R.drawable.connected);
+            netstatimg.setImageResource(R.drawable.conn);
         } else {
             netstat.setText("Trying for find a network connection!\nPlease Check Internet Connection...");
-            netstatimg.setImageResource(android.R.drawable.dis);
+            netstatimg.setImageResource(R.drawable.dis);
         }
     }
 

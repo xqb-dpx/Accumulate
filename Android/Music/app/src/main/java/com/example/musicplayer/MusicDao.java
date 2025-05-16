@@ -1,16 +1,20 @@
 package com.example.musicplayer;
 
-import androidx.room.Dao;
-import androidx.room.Insert;
-import androidx.room.Query;
+import androidx.room.*;
 
 import java.util.List;
 
 @Dao
 public interface MusicDao {
+    @Query("SELECT * FROM MusicLink")
+    List<MusicLink> getAllLinks();
+
     @Insert
     void insert(MusicLink musicLink);
 
-    @Query("SELECT * FROM MusicLink")
-    List<MusicLink> getAllLinks();
+    @Update
+    void update(MusicLink musicLink);
+
+    @Delete
+    void delete(MusicLink musicLink);
 }

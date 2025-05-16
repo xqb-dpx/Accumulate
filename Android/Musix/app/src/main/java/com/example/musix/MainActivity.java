@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Toast.makeText(MainActivity.this, "Hello Master", Toast.LENGTH_SHORT).show();
         }
+        MusicListAdapter musicListAdapter = new MusicListAdapter(songsList, getApplicationContext());
 
         String[] projection = {
                 MediaStore.Audio.Media.TITLE,
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 // recyclerView
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
-                recyclerView.setAdapter(new MusicListAdapter(songsList, getApplicationContext()));
+                recyclerView.setAdapter(musicListAdapter);
             }
         }
     }

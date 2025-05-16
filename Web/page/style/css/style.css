@@ -1,0 +1,103 @@
+@font-face {
+    font-family: ubuntu;
+    src: url("style/font/ubuntu.ttf");
+}
+
+@font-face {
+    font-family: sansation;
+    src: url("style/font/sansation.ttf");
+}
+
+@keyframes logo {
+    0% {
+        width: 50px;
+        height: 50px;
+        color: rgba(0, 0, 0, 0.00);
+    }
+
+    50% {
+        width: 50px;
+        height: 50px;
+        color: rgba(0, 0, 0, 0.00);
+    }
+}
+
+body {
+    background-color: gray;
+}
+
+#logo-sec {
+    animation-name: logo;
+    animation-duration: 2s;
+    position: absolute;
+    background-color: rgb(248, 40, 40);
+    border-radius: 25px;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: 500px;
+    transform: translate(-50%, -50%);
+}
+
+    #logo-sec img {
+        border-radius: 17px;
+        position: absolute;
+    }
+
+h1 {
+    font-family: ubuntu;
+    color: whitesmoke;
+    margin-top: 30px;
+    margin-left: 5%;
+}
+
+p {
+    font-family: sansation;
+    color: whitesmoke;
+    margin-top: 30px;
+    margin-left: 5%;
+}
+
+.entry {
+    border-style: hidden;
+}
+
+#logform {
+    position: absolute;
+    background-color: rgb(248, 40, 40);
+    border-radius: 25px;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+}
+
+.topnav {
+    font-family: sansation;
+    background-color: #333;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: yellow;
+            color: black;
+        }
+
+.topnav-right {
+    float: right;
+}
