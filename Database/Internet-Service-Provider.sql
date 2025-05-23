@@ -9,10 +9,9 @@ CREATE TABLE [dbo].[Users]
     [FullName] NVARCHAR(50), 
     [Email] NVARCHAR(100) UNIQUE, 
     [Password] VARCHAR(50),
-    [Phone] VARCHAR(10) NOT NULL CHECK (LEN([Phone]) = 9 AND [Phone] NOT LIKE '%[^0-9]%%'),
+    [Phone] VARCHAR(10) NOT NULL CHECK (LEN([Phone]) = 10 AND [Phone] NOT LIKE '%[^0-9]%%'),
     [Address] NVARCHAR(255) NULL,
-    [SignupDate] DATE NULL,
-
+    [SignupDate] DATE NULL
 );
 
 CREATE TABLE [dbo].[Services]
