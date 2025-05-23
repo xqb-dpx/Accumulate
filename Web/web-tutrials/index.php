@@ -63,7 +63,6 @@ class Temp
     }
 
     public function __destruct(){
-
     }
 }
 

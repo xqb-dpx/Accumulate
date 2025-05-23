@@ -45,18 +45,32 @@ include "include/header.php";
             <h2 class="fw-bold text-center"><a name="product">محصولات</a></h2>
         </div>
     </div>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
-        <div class="col mb-3">
-            <div class="card shadow-sm">
-                <img src="images/product.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">عنوان محصول</h5>
-                    <p class="card-text">در این بخش توضیحات محصول نوشته می شود.</p>
-                    <a href="#" class="btn btn-primary">اطلاعات بیشتر ...</a>
+    <?php
+    try {
+        $db = new PDO("mysql:host=localhost;dbname=shop;charset=utf8;", "root", "");
+    } catch (PDOException $e) {
+        die($e->getMessage());
+    }
+
+    $query = $db->prepare("SELECT id, title, summary FROM products ORDER BY time DESC LIMIT 6");
+    $data = $query->fetchAll();
+    foreach ($data as $item) {
+        ?>
+        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-1">
+            <div class="col mb-3">
+                <div class="card shadow-sm">
+                    <img src="images/product.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $item["title"] ?></h5>
+                        <p class="card-text"><?= $item["summary"] ?></p>
+                        <a href="#" class="btn btn-primary">Details...</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <?php
+    }
+    ?>
 </div>
 <section class="py-4 bg-light shadow-sm">
     <div class="container">
@@ -140,17 +154,38 @@ include "include/header.php";
                 </p>
             </div>
             <div class="col-md-6 col-sm-12 col-12">
-                <form action="" method="POST">
+                <?php
+                if (isset($_POST['submit'])) {
+                    if (isset($_POST['name']) and !empty($_POST['name']) && isset($_POST['email']) and !empty($_POST['email']) && isset($_POST['message']) and !empty($_POST['message'])) {
+                        $query = $db->prepare("INSERT INTO feedback (name, email, message, ip, time) VALUES (?, ?, ?, ?, ?)");
+                        $data = [$_POST['name'], $_POST['email'], $_POST['message'], $_SERVER['REMOTE_ADDR'], time()];
+                        if ($query->execute($data)) {
+                        ?>
+                        <script type="javascript">
+                            alert("Feedback submit successfully!");
+                        </script>
+                        <?php
+                        }
+                    } else {
+                        ?>
+                        <script type="javascript">
+                            alert("An input is empty! please try again...");
+                        </script>
+                        <?php
+                    }
+                }
+                ?>
+                <form action="index.php" method="POST">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="name" placeholder="*" required/>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="*" required/>
                         <label for="name">نام و نام خانوادگی</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" placeholder="*" required/>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="*" required/>
                         <label for="email">پست الکترونیکی</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="*" id="message" required></textarea>
+                        <textarea class="form-control" placeholder="*" id="message" name="message" required></textarea>
                         <label for="message">پیام</label>
                     </div>
                     <input type="submit" class="btn btn-success" id="submit" name="submit" value="ارسال پیام"/>
@@ -166,3 +201,7 @@ include 'include/footer.php';
 <script src="assets/bootstrap-v5.3.5/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+<?php
+$db = null;
+$query = null;
+?>
