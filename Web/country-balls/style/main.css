@@ -1,0 +1,33 @@
+﻿body {
+    background-color: darkslategray;
+}
+
+#all {
+    border-radius: 50px;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    padding: 50px;
+    overflow-y: scroll;
+    width: 220px;
+    height: 220px;
+}
+
+.container {
+    margin-bottom: 10px;
+    border-left: double;
+    border-right: double;
+    border-color: yellow;
+    padding: 50px;
+    border-radius: 50px;
+}
+
+    .container img {
+        border-style: groove;
+        border-color: lightgray;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
