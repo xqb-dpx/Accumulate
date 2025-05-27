@@ -1,6 +1,9 @@
 package com.example.alphamusic;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
@@ -37,7 +40,9 @@ public class OnlineActivity extends AppCompatActivity {
         });
 
         btnShow.setOnClickListener(v -> {
-            Intent intent = new Intent(OnlineActivity.this, OnlineListActivity.class);
+            SharedPreferences sp = getSharedPreferences("Links", Context.MODE_PRIVATE);
+            @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sp.edit();
+            Intent intent = new Intent(OnlineActivity.this, NetworkCheckActivity.class);
             startActivity(intent);
         });
     }

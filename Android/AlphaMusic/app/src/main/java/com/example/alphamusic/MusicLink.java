@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey;
 public class MusicLink {
     @PrimaryKey(autoGenerate = true)
     public int id;
-
     public String url;
 
     public MusicLink(String url) {

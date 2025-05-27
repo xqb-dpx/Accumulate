@@ -16,7 +16,8 @@
             tools:ignore="UseCompoundDrawables,UselessLeaf">
         <TextView
                 android:id="@+id/musicName"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:background="@color/white"
                 android:textSize="30dp"
                 android:gravity="center"
                 android:layout_width="match_parent"
